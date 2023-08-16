@@ -5,8 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set env
-        env:
-          ANSIBLE_LOG_PATH: ${{ runner.temp }}/logs/ansible.log
-        run: env | sort
+        run: echo ANSIBLE_LOG_PATH=${{ runner.temp }}/logs/ansible.log >> $GITHUB_ENV
       - name: check env
-        run: env | sort
+        run: echo $ANSIBLE_LOG_PATH

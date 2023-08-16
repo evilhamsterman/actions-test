@@ -8,7 +8,7 @@ jobs:
         run: echo ANSIBLE_LOG_PATH=${{ runner.temp }}/ansible.log >> $GITHUB_ENV
       - name: check env
         run: echo $ANSIBLE_LOG_PATH
+      - run: echo "HELLO THERE" > $ANSIBLE_LOG_PATH
       - uses: actions/upload-artifact@v3
         with:
           path: ${{ env.ANSIBLE_LOG_PATH }}
-      - run: echo "HELLO THERE" > $ANSIBLE_LOG_PATH
